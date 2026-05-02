@@ -1,0 +1,1 @@
+python manage.py runserver_plus 26.133.221.82:8000 --cert-file localhost.crt --key-file localhost-key.pem

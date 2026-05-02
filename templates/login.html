@@ -1,4 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<title>Авторизация</title>
+
+{% if user.is_authenticated %}
+<p>Вы уже вошли в систему!</p>
+{%endif%}
+
+<form method="post">
+    {% csrf_token %}
+    {% for f in form %}
+    <p><label for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }}</p>
+    <div>{{ f.errors }}</div>
+    {%endfor%}
+    <button type="submit">Войти</button>
+    <p>{{ form.non_field_error }}</p>
+    <p>{{ form.errors }}</p>
+</form>
+
+
 {% endblock %}

@@ -30,10 +30,13 @@ class RegisterUser(DataMixin, CreateView):
         user = form.save()
         login(self.request, user)
         return redirect('profile')
+    
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
 
 class LoginUser(DataMixin, LoginView):
     template_name = 'login.html'
     form_class = LoginUserForm
 
     def get_success_url(self):
-        return reverse_lazy('home')
+        return reverse_lazy('index')

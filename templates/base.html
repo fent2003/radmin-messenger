@@ -8,6 +8,12 @@
 <body>
     {% block content %}
     {% endblock %}
+    <ul>
+        <li><a href="{% url 'index' %}">Домашняя страница</a></li>
+        <li><a href="{% url 'login' %}">Авторизация</a></li>
+        <li><a href="{% url 'register' %}">Регистрация</a></li>
+        <li><a href="{% url 'profile' %}">Профиль</a></li>
+    </ul>
 </body>
 </html>
 {% endblock %}

@@ -4,6 +4,6 @@ from messenger import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('', views.Index.as_view(), name='index'),
     path('accounts/', include('Users.urls'))
 ]

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<p>Имя пользователя: {{ user.username }}</p>
+<p>Email: {{ user.email }}</p>
+<a href="{% url 'logout' %}">Выйти из аккаунта</a>
+
+{%endblock%}
